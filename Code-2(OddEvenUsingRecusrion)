@@ -1,0 +1,42 @@
+//Program to print even and odd numbers in a particular range using recursion.
+
+#include <stdio.h>
+int EvenOdd(int,int);//Function prototype
+
+int main()
+{
+    int low,high,x;
+    printf("Enter the lower limit: ");
+    scanf("%d",&low);
+    printf("Enter the upper limit: ");
+    scanf("%d",&high);
+    
+    if (low%2==0)
+    {
+        printf("Even numbers between %d and %d are:\n",low,high);
+        EvenOdd(low,high);
+        printf("\nOdd numbers between %d and %d are:\n",low,high);
+        EvenOdd(low+1,high);
+    }
+    
+    if (low%2!=0)
+    {
+        printf("Odd numbers between %d and %d are:\n",low,high);
+        EvenOdd(low,high);
+        printf("\nEven numbers between %d and %d are:\n",low,high);
+        EvenOdd(low+1,high);
+    }
+    return 0;
+}
+
+//Function for odd and even numbers in a particular range using recursion
+int EvenOdd(int l, int h)
+{
+    if(l>h)
+    {
+        return 0;
+    }
+    printf("  %d  ",l);
+    EvenOdd(l+2,h);
+    return 0;
+}
