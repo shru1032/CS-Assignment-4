@@ -1,0 +1,29 @@
+//Program to find the sum of the digits of a number using recursion.
+
+#include <stdio.h>
+
+int add(int);//Function prototype.
+
+int main()
+{
+    int num,x;
+    printf("Enter a number here:");
+    scanf("%d",&num);
+    x=add(num);
+    printf("The sum of the digits of %d is: %d\n",num,x);
+}
+
+//Function definition
+int add(int n)
+{
+    int rem,m,sum=0;
+    m=n;
+    
+    //To find the sum of digits.
+    while(m!=0)
+    {
+        rem=m%10;
+        sum=sum+rem;
+        return sum+add(m/10);
+    }
+}
