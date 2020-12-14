@@ -1,0 +1,36 @@
+//Program to print the sum of natural numbers in a given range using recursion.
+
+#include <stdio.h>
+int sum(int,int);//Function prototype
+
+int main()
+{
+    int low,high;
+    printf("Enter the lower limit:");
+    scanf("%d",&low);
+    printf("Enter the upper limit:");
+    scanf("%d",&high);
+    
+    //If lower limit is even.
+    if (low%2==0)
+    {
+        printf("Sum of even numbers between %d and %d is: %d\n",low,high,sum(low,high));
+        printf("Sum of odd numbers between %d and %d is: %d\n",low,high,sum(low+1,high));
+    }
+    
+    //If lower limit is odd.
+    if (low%2!=0)
+    {
+        printf("Sum of odd numbers between %d and %d is: %d\n",low,high,sum(low,high));
+        printf("Sum of even numbers between %d and %d is: %d\n",low,high,sum(low+1,high));
+    }
+    return 0;
+}
+//Function definition
+int sum(int l, int h)
+{
+    if(l>h)
+        return 0;
+    else 
+        return (l+sum(l+2,h));
+}
