@@ -1,0 +1,28 @@
+//Program to find GCD (HCF) of two numbers using recursion.
+ 
+#include <stdio.h>
+int gcd(int a, int b);//Function prototype.
+
+
+int main()
+{
+    int num1, num2, hcf;
+    printf("Enter the first number: ");
+    scanf("%d",&num1);
+    printf("Enter the second number: ");
+    scanf("%d",&num2);
+    hcf = gcd(num1, num2);
+    printf("HCF of %d and %d = %d", num1, num2, hcf);
+    return 0;
+}
+
+
+
+//Recursive function to find hcf of two numbers.
+int gcd(int a, int b)
+{
+    if(b == 0)
+        return a;
+    else
+        return gcd(b, a%b); 
+}
