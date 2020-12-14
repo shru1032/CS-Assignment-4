@@ -1,0 +1,35 @@
+//Program to find the reverse of a number using recursion.
+
+#include <stdio.h>
+#include<math.h>
+
+int reverse(int);//Function prototype.
+
+int main()
+{
+    int num;
+    printf("Enter a number here:");
+    scanf("%d",&num);
+    printf("Entered number after reversing the digits is:  %d",reverse(num));
+    return 0;
+}
+
+//Function definition
+int reverse(int n)
+{
+    int count=0,rem,m;
+    m=n;
+    //To count the number of digits.
+    while(m!=0)
+    {
+        rem=m%10;
+        count++;
+        m=m/10;
+    }
+    //Recursive function to find the reverse.
+    while(n!=0)
+    {
+        rem=n%10;
+        return (rem*pow(10,count-1) + reverse(n/10));
+    }
+}
