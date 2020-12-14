@@ -1,0 +1,25 @@
+//Program to print natural numbers between 1 to n using function.
+
+#include <stdio.h>
+int num(int);//Function prototype
+
+int main()
+{
+    int n;
+    printf("Enter a number to print natural numbers less than that:");
+    scanf("%d",&n);
+    printf("Natural numbers between 1 and %d are:\n",n);
+    num(n); 
+    return 0;
+}
+
+//Function definition
+int num(int n)
+{
+    int i;
+    for (i=1;i<=n;i++)
+    {
+        printf("%d\n",i);
+    }
+    return 0;
+}
